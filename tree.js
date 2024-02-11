@@ -37,4 +37,15 @@ class Tree {
         fn(node);
       }
   }
+
+  levelWidth(root) {
+    const arr = [root];
+    const width = []
+    while (arr.length) {
+      const node = arr.shift();
+      arr.push(...node.children);
+      width.push(arr.length)
+    }
+    return width
+  }
 }
